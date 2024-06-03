@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Francisco Javier Ferruzca Rojas</title>
+    <!-- icon -->
+    <link rel="icon" href="assets/image/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
+        integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .image-circle {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #FFEC9C, #FAD12A);
+            overflow: hidden;
+        }
+
+        .profile-img {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: none;
+            background-color: #FAD12A;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: opacity 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #e5b916;
+        }
+
+        .dark-mode {
+            background-color: #1a202c;
+            color: #cbd5e0;
+        }
+
+        .dark-mode .bg-gray-50 {
+            background-color: #2d3748;
+        }
+
+        .dark-mode .text-gray-700 {
+            color: #e2e8f0;
+        }
+
+        .dark-mode .text-gray-500 {
+            color: #a0aec0;
+        }
+
+        .dark-mode .border-gray-300 {
+            border-color: #4a5568;
+        }
+
+        .dark-mode-toggle {
+            background-color: #f3f4f6;
+            color: #000;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #e5e7eb;
+        }
+
+        .dark-mode .dark-mode-toggle {
+            background-color: #4a5568;
+            color: #fff;
+        }
+
+        .dark-mode .dark-mode-toggle:hover {
+            background-color: #2d3748;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .header {
+            background-color: #2d3748;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Encabezado con el botón de modo oscuro -->
+    <button id="dark-mode-toggle" class="dark-mode-toggle">
+        <i id="dark-mode-icon" data-feather="sun"></i>
+    </button>
+
+    <!-- Botón de desplazamiento al inicio -->
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        ↑
+    </button>
+
+    <section class="py-10 md:py-16 text-center">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-center items-start gap-6">
+                <div class="bg-gray-50 px-8 py-10 rounded-md w-full max-w-md shadow-lg">
+                    <div class="flex justify-center mb-16">
+                        <!-- Contenedor con degradado para la imagen -->
+                        <div class="image-circle">
+                            <video autoplay loop muted class="profile-video">
+                                <source src="assets/image/video.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                    <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Francisco Javier Ferruzca Rojas</h1>
+                    <span class="w-28 h-0.5 bg-gray-300 mt-5"></span>
+                    <p class="font-normal text-gray-500 text-md">Developer Sr.</p>
+                    <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
+                    <div class="flex items-center justify-center space-x-8">
+                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                            <img src="assets/image/technologies/12.svg" alt="WhatsApp" class="w-6"/>
+                        </a>
+                        <a href="https://wa.me/524423117551?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios." target="_blank" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                            <img src="assets/image/technologies/13.svg" alt="WhatsApp" class="w-6"/>
+                        </a>                        
+                        <a href="https://github.com/javierfr" target="_blank" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                            <img src="assets/image/technologies/10.svg" alt="WhatsApp" class="w-6"/>
+                        </a>
+                        <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
+                            <img src="assets/image/technologies/9.svg" alt="WhatsApp" class="w-6"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="py-10 md:py-16">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center md:items-start md:gap-6">
+                <div class="flex justify-center md:justify-start mb-8 md:mb-0">
+                    <div class="image-circle">
+                        <img src="assets/image/ios-avatar.png" alt="Profile Image" class="profile-img">
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h1 class="font-medium text-gray-700 text-3xl md:text-4xl mb-5">Profile</h1>
+                    <p class="font-normal text-gray-600 text-md md:text-xl mb-16">Hello everyone!<br>
+                        I am Javier, a person passionate about continuous learning, especially in the field of information technology. I love exploring and mastering new tools and trends in this dynamic field. Additionally, I enjoy sharing my knowledge with others, whether through talks, workshops, or collaborations on projects. One of my main motivations is to meet new people, learn from their experiences, and contribute to a healthy community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 md:py-5 text-center">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-center items-start gap-6">
+                <div class="border border-gray-300 px-8 py-5 rounded-md w-full max-w-md shadow-lg">
+                    <h4 class="font-medium text-gray-700 text-lg mb-4">Data</h4>
+
+                    <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
+
+                    <p class="font-semibold text-gray-600 text-base">Email: <span
+                            class="font-normal text-gray-500">javier_fr@outlook.com</span></p>
+                    <p class="font-semibold text-gray-600 text-base">Telephone: <span
+                            class="font-normal text-gray-500">+52 4423117551</span></p>
+                    <p class="font-semibold text-gray-600 text-base">Address: <span
+                            class="font-normal text-gray-500">San Isidro Miranda, El Marqués Qro., México.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 md:py-5 text-center">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-center items-start gap-6">
+                <div class="border border-gray-300 px-8 py-5 rounded-md w-full shadow-lg">
+                    <h4 class="font-medium text-gray-700 text-lg mb-4">Education</h4>
+                    <p class="font-normal text-gray-500 text-xs md:text-base">I completed my educational studies at the following institutions.</p>
+
+                    <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
+
+                    <div
+                        class="flex flex-col md:flex-row justify-center items-center space-x-0 md:space-x-6 space-y-6 md:space-y-0">
+                        <div class="bg-gray-50 px-8 py-10 rounded-md">
+                            <h4 class="font-medium text-gray-700 text-lg mb-4">2014 – 2018</h4>
+                            <p class="font-normal text-gray-500 text-md mb-4">Information Technology Engineering.</p>
+                            <div class="relative">
+                                <h6 class="font-semibold text-gray-500 text-md relative z-10">Universidad Tecnológica de Querétaro</h6>
+                                <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 px-8 py-10 rounded-md">
+                            <h4 class="font-medium text-gray-700 text-lg mb-4">2021</h4>
+                            <p class="font-normal text-gray-500 text-md mb-4">Master's in Information Systems: Management and Technology.</p>
+                            <div class="relative">
+                                <h6 class="font-semibold text-gray-500 text-md relative z-10">Universidad Autónoma de Querétaro</h6>
+                                <span class="w-32 h-1 bg-blue-200 absolute bottom-1 left-0 z-0"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 md:py-5 text-center">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-center items-start gap-6">
+                <div class="border border-gray-300 px-6 py-4 rounded-md w-full shadow-lg">
+                    <h4 class="font-medium text-gray-700 text-lg mb-4">Technical Skills</h4>
+                    <p class="font-normal text-gray-500 text-xs md:text-base">These are the technologies I use the most for development.</p>
+
+                    <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/2.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">PHP (Codeigniter)</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/5.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">Flutter</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/3.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">Angular</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/6.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">Go (Gin)</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/1.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">MySQL</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/4.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">Isar Database</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/7.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">Bootstrap</h4>
+                        </div>
+                        <div class="bg-gray-50 px-6 py-8 rounded-md">
+                            <div class="w-16 py-4 flex justify-center bg-gray-100 rounded-md mb-3">
+                                <img src="assets/image/technologies/8.svg" alt="PHP" class="w-6">
+                            </div>
+                            <h4 class="font-medium text-gray-700 text-md mb-3">Git</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 md:py-5 text-center">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-center items-start gap-6">
+                <div class="border border-gray-300 px-8 py-5 rounded-md w-full shadow-lg">
+                    <h4 class="font-medium text-gray-700 text-lg mb-4">Portfolio</h4>
+                    <p class="font-normal text-gray-500 text-xs md:text-base">I am sharing with you some of the individual projects I have completed.</p>
+                    <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
+    
+                    <div class="space-y-24">
+                        <div class="flex justify-center items-center space-x-6">
+                            <h1 class="font-normal text-gray-700 text-3xl md:text-4xl">01</h1>
+                            <span class="w-28 h-0.5 bg-gray-300"></span>
+                            <div class="text-left">
+                                <h1 class="font-normal text-gray-700 text-3xl md:text-4xl mb-5">Demo API Generator</h1>
+                                <p class="font-normal text-gray-500 text-sm md:text-base">A dummy data free and documented API generator to facilitate <br> the process of testing the front-end portion of projects.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center space-x-6">
+                            <h1 class="font-normal text-gray-700 text-3xl md:text-4xl">02</h1>
+                            <span class="w-28 h-0.5 bg-gray-300"></span>
+                            <div class="text-left">
+                                <h1 class="font-normal text-gray-700 text-3xl md:text-4xl mb-5">Demo API Generator</h1>
+                                <p class="font-normal text-gray-500 text-sm md:text-base">A dummy data free and documented API generator to facilitate <br> the process of testing the front-end portion of projects.</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-center items-center space-x-6">
+                            <h1 class="font-normal text-gray-700 text-3xl md:text-4xl">03</h1>
+                            <span class="w-28 h-0.5 bg-gray-300"></span>
+                            <div class="text-left">
+                                <h1 class="font-normal text-gray-700 text-3xl md:text-4xl mb-5">Demo API Generator</h1>
+                                <p class="font-normal text-gray-500 text-sm md:text-base">A dummy data free and documented API generator to facilitate <br> the process of testing the front-end portion of projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="py-10 md:py-5 text-center">
+        <div class="container max-w-screen-xl mx-auto px-4">
+            <div class="flex justify-center items-start gap-6">
+                <div class="border border-gray-300 px-8 py-5 rounded-md w-full shadow-lg">
+                    <h4 class="font-medium text-gray-700 text-lg mb-4">Work Experience</h4>
+                    <p class="font-normal text-gray-500 text-xs md:text-base">Learn a bit about my career path as a developer.</p>
+
+                    <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
+
+                    <div class="flex flex-col lg:flex-row justify-between">
+                        <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
+                            <h6 class="font-medium text-gray-400 text-base uppercase">Company</h6>
+        
+                            <p class="font-semibold text-gray-600 text-base">Tlaloc Seguros <span
+                                    class="font-normal text-gray-300">/ México</span></p>      
+                            <p class="font-semibold text-gray-600 text-base">Grupo Esscalo <span
+                                    class="font-normal text-gray-300">/ México</span></p>
+                            <p class="font-semibold text-gray-600 text-base">Abacom Telecomunicaciones <span
+                                    class="font-normal text-gray-300">/ México</span></p>
+                            <p class="font-semibold text-gray-600 text-base">Dataware <span
+                                    class="font-normal text-gray-300">/ México</span></p>
+                        </div>
+        
+                        <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
+                            <h6 class="font-medium text-gray-400 text-base uppercase">Position</h6>
+        
+                            <p class="font-normal text-gray-400 text-base">Developer Full Stack</p>
+                            <p class="font-normal text-gray-400 text-base">Developer Full Stack</p>
+                            <p class="font-normal text-gray-400 text-base">Developer Full Stack</p>
+                            <p class="font-normal text-gray-400 text-base">Developer Full Stack</p>
+                        </div>
+        
+                        <div class="space-y-8 md:space-y-16">
+                            <h6 class="font-medium text-gray-400 text-base uppercase">Year</h6>
+      
+                            <p class="font-normal text-gray-400 text-base">2023 - 2024</p>
+                            <p class="font-normal text-gray-400 text-base">2022 - 2023</p>
+                            <p class="font-normal text-gray-400 text-base">2019 - 2022</p>
+                            <p class="font-normal text-gray-400 text-base">2018 - 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-500 text-sm md:text-base">
+                © 2024. Made with <span class="text-red-500">❤</span> by Hola Soy Javier.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+
+        // Mostrar el botón cuando se desplaza hacia abajo
+        window.addEventListener('scroll', function() {
+            const scrollToTopButton = document.querySelector('.scroll-to-top');
+            if (window.pageYOffset > 100) {
+                scrollToTopButton.style.display = 'block';
+            } else {
+                scrollToTopButton.style.display = 'none';
+            }
+        });
+
+        // Función para desplazarse al inicio de la página
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Alternar modo oscuro
+        const toggleButton = document.getElementById('dark-mode-toggle');
+        let icon = document.getElementById('dark-mode-icon');
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.setAttribute('data-feather', 'moon');
+            } else {
+                icon.setAttribute('data-feather', 'sun');
+            }
+            feather.replace();
+            // Re-obtener la referencia al icono después de que feather.replace() lo reemplace
+            icon = document.getElementById('dark-mode-icon');
+        });
+    </script>
+</body>
+
+</html>
