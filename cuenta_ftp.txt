@@ -3,8 +3,8 @@ github@tlalocseguros.com
 JavierFR117
 
 # Setup
-git config git-ftp.url "ftp.sobre-verde.com/"
-git config git-ftp.user "github_soyjavier@sobre-verde.com"
+git config git-ftp.url "ftp.sobre-verde.com"
+git config git-ftp.user "git_soyjavier@soyjavier.mx"
 git config git-ftp.password "Hola-Mundo117"
 
 # Upload all files
