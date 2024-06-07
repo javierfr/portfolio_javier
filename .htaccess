@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^soyjavier\.mx [NC]
+RewriteRule ^(.*)$ https://www.soyjavier.mx/$1 [L,R=301]
