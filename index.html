@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"
-        integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- gsap -->
+    <script src="assets/gsap/minified/gsap.min.js"></script>
+    <script src="assets/gsap/minified/ScrollTrigger.min.js"></script>
     <style>
         .image-circle {
             width: 200px;
@@ -115,6 +116,17 @@
         .dark-mode .header {
             background-color: #2d3748;
         }
+
+        /* Estilo para los iconos en modo oscuro */
+        .dark-mode .icon-dark-mode {
+            filter: invert(1);
+        }
+
+        .figure {
+            position: absolute;
+            z-index: -1;
+            width: 200px; /* Ajusta el tamaño según tus necesidades */
+        }
     </style>
 </head>
 
@@ -129,6 +141,13 @@
         ↑
     </button>
 
+    <!-- Añade las figuras en varias secciones -->
+    <img src="assets/image/figures/1.png" alt="Figure 1" class="figure" id="figure1" style="top: 10%; left: 10%;">
+    <img src="assets/image/figures/2.png" alt="Figure 2" class="figure" id="figure2" style="top: 50%; left: 80%;">
+    <img src="assets/image/figures/3.png" alt="Figure 3" class="figure" id="figure3" style="top: 150%; left: 80%;">
+    <img src="assets/image/figures/4.png" alt="Figure 4" class="figure" id="figure4" style="top: 150%; left: 20%;">
+    <img src="assets/image/figures/5.png" alt="Figure 4" class="figure" id="figure4" style="top: 250%; left: 80%;">
+
     <section class="py-10 md:py-16 text-center">
         <div class="container max-w-screen-xl mx-auto px-4">
             <div class="flex justify-center items-start gap-6">
@@ -136,7 +155,7 @@
                     <div class="flex justify-center mb-16">
                         <!-- Contenedor con degradado para la imagen -->
                         <div class="image-circle">
-                            <video autoplay loop muted class="profile-video">
+                            <video autoplay loop muted playsinline class="profile-video">
                                 <source src="assets/image/video.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -148,16 +167,16 @@
                     <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
                     <div class="flex items-center justify-center space-x-8">
                         <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <img src="assets/image/technologies/12.svg" alt="WhatsApp" class="w-6"/>
+                            <img src="assets/image/technologies/12.svg" alt="WhatsApp" class="w-6 icon-dark-mode"/>
                         </a>
                         <a href="https://wa.me/524423117551?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20tus%20servicios." target="_blank" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <img src="assets/image/technologies/13.svg" alt="WhatsApp" class="w-6"/>
+                            <img src="assets/image/technologies/13.svg" alt="WhatsApp" class="w-6 icon-dark-mode"/>
                         </a>                        
                         <a href="https://github.com/javierfr" target="_blank" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <img src="assets/image/technologies/10.svg" alt="WhatsApp" class="w-6"/>
+                            <img src="assets/image/technologies/10.svg" alt="WhatsApp" class="w-6 icon-dark-mode"/>
                         </a>
                         <a href="#" class="w-16 h-16 flex items-center justify-center rounded-full hover:bg-gray-200 transition ease-in-out duration-500">
-                            <img src="assets/image/technologies/9.svg" alt="WhatsApp" class="w-6"/>
+                            <img src="assets/image/technologies/9.svg" alt="WhatsApp" class="w-6 icon-dark-mode"/>
                         </a>
                     </div>
                 </div>
@@ -181,7 +200,7 @@
             </div>
         </div>
     </section>
-
+    
     <section class="py-10 md:py-5 text-center">
         <div class="container max-w-screen-xl mx-auto px-4">
             <div class="flex justify-center items-start gap-6">
@@ -210,8 +229,7 @@
 
                     <span class="block w-full h-0.5 bg-gray-300 mt-5 mb-5"></span>
 
-                    <div
-                        class="flex flex-col md:flex-row justify-center items-center space-x-0 md:space-x-6 space-y-6 md:space-y-0">
+                    <div class="flex flex-col md:flex-row justify-center items-center space-x-0 md:space-x-6 space-y-6 md:space-y-0">
                         <div class="bg-gray-50 px-8 py-10 rounded-md">
                             <h4 class="font-medium text-gray-700 text-lg mb-4">2014 – 2018</h4>
                             <p class="font-normal text-gray-500 text-md mb-4">Information Technology Engineering.</p>
@@ -336,7 +354,6 @@
             </div>
         </div>
     </section>
-    
 
     <section class="py-10 md:py-5 text-center">
         <div class="container max-w-screen-xl mx-auto px-4">
@@ -351,14 +368,10 @@
                         <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
                             <h6 class="font-medium text-gray-400 text-base uppercase">Company</h6>
         
-                            <p class="font-semibold text-gray-600 text-base">Tlaloc Seguros <span
-                                    class="font-normal text-gray-300">/ México</span></p>      
-                            <p class="font-semibold text-gray-600 text-base">Grupo Esscalo <span
-                                    class="font-normal text-gray-300">/ México</span></p>
-                            <p class="font-semibold text-gray-600 text-base">Abacom Telecomunicaciones <span
-                                    class="font-normal text-gray-300">/ México</span></p>
-                            <p class="font-semibold text-gray-600 text-base">Dataware <span
-                                    class="font-normal text-gray-300">/ México</span></p>
+                            <p class="font-semibold text-gray-600 text-base">Tlaloc Seguros <span class="font-normal text-gray-300">/ México</span></p>      
+                            <p class="font-semibold text-gray-600 text-base">Grupo Esscalo <span class="font-normal text-gray-300">/ México</span></p>
+                            <p class="font-semibold text-gray-600 text-base">Abacom Telecomunicaciones <span class="font-normal text-gray-300">/ México</span></p>
+                            <p class="font-semibold text-gray-600 text-base">Dataware <span class="font-normal text-gray-300">/ México</span></p>
                         </div>
         
                         <div class="space-y-8 md:space-y-16 mb-16 md:mb-0">
@@ -424,6 +437,67 @@
             feather.replace();
             // Re-obtener la referencia al icono después de que feather.replace() lo reemplace
             icon = document.getElementById('dark-mode-icon');
+        });
+
+        // Animaciones con ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.from("#figure1", {
+            scrollTrigger: {
+                trigger: "#figure1",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 100,
+            duration: 1
+        });
+
+        gsap.from("#figure2", {
+            scrollTrigger: {
+                trigger: "#figure2",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 100,
+            duration: 1
+        });
+
+        gsap.from("#figure3", {
+            scrollTrigger: {
+                trigger: "#figure3",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 100,
+            duration: 1
+        });
+        
+        gsap.from("#figure4", {
+            scrollTrigger: {
+                trigger: "#figure4",
+                start: "top 80%",
+                end: "bottom 20%",
+                toggleActions: "play none none none"
+            },
+            opacity: 0,
+            y: 100,
+            duration: 1
+        });
+
+        // Intentar reproducir el video después de una interacción del usuario
+        document.body.addEventListener('click', function() {
+            const video = document.querySelector('.profile-video');
+            if (video.paused) {
+                video.play().catch(error => {
+                    console.log('Error al reproducir el video:', error);
+                });
+            }
         });
     </script>
 </body>
